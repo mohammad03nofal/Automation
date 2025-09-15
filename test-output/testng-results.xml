@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-11T22:02:10 EET" name="Default suite" finished-at="2025-09-11T22:02:43 EET" duration-ms="32287">
+  <suite started-at="2025-09-15T19:25:02 EET" name="Default suite" finished-at="2025-09-15T19:25:16 EET" duration-ms="14579">
     <groups>
     </groups>
-    <test started-at="2025-09-11T22:02:10 EET" name="Default test" finished-at="2025-09-11T22:02:43 EET" duration-ms="32287">
+    <test started-at="2025-09-15T19:25:02 EET" name="Default test" finished-at="2025-09-15T19:25:16 EET" duration-ms="14579">
       <class name="AutomationTestStore.TestStore">
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:AutomationTestStore.TestStore@60957c0f]" started-at="2025-09-11T22:02:10 EET" name="SetUp" finished-at="2025-09-11T22:02:14 EET" duration-ms="3225" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:AutomationTestStore.TestStore@293a5f75]" started-at="2025-09-15T19:25:02 EET" name="SetUp" finished-at="2025-09-15T19:25:04 EET" duration-ms="2102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="SignUpTest()[pri:1, instance:AutomationTestStore.TestStore@60957c0f]" started-at="2025-09-11T22:02:14 EET" name="SignUpTest" finished-at="2025-09-11T22:02:32 EET" duration-ms="18544" status="PASS">
+        <test-method signature="AddItems()[pri:4, instance:AutomationTestStore.TestStore@293a5f75]" started-at="2025-09-15T19:25:04 EET" name="AddItems" finished-at="2025-09-15T19:25:16 EET" duration-ms="12407" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SignUpTest -->
-        <test-method signature="logOutTest()[pri:2, instance:AutomationTestStore.TestStore@60957c0f]" started-at="2025-09-11T22:02:32 EET" name="logOutTest" finished-at="2025-09-11T22:02:36 EET" duration-ms="3944" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logOutTest -->
-        <test-method signature="logIn()[pri:3, instance:AutomationTestStore.TestStore@60957c0f]" started-at="2025-09-11T22:02:36 EET" name="logIn" finished-at="2025-09-11T22:02:43 EET" duration-ms="6374" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logIn -->
-        <test-method is-config="true" signature="AfterMyTest()[pri:0, instance:AutomationTestStore.TestStore@60957c0f]" started-at="2025-09-11T22:02:43 EET" name="AfterMyTest" finished-at="2025-09-11T22:02:43 EET" duration-ms="3" status="PASS">
+        </test-method> <!-- AddItems -->
+        <test-method is-config="true" signature="AfterMyTest()[pri:0, instance:AutomationTestStore.TestStore@293a5f75]" started-at="2025-09-15T19:25:16 EET" name="AfterMyTest" finished-at="2025-09-15T19:25:16 EET" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMyTest -->

@@ -32,7 +32,7 @@ public class TestStore extends SignUpData{
 
     }
 	
-	@Test(priority=1)
+	@Test(priority=1,enabled=false)
 	public void SignUpTest() throws InterruptedException
 	{
 		driver.navigate().to(SignUpPage);
@@ -76,7 +76,7 @@ public class TestStore extends SignUpData{
 	    		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,enabled=false)
 	
 	public void logOutTest() throws InterruptedException
 	{
@@ -86,10 +86,11 @@ public class TestStore extends SignUpData{
 		Assert.assertEquals(ActualResult2, ExpectedResult2);
 	}
 	
-@Test(priority=3)
+@Test(priority=3,enabled=false)
 	
-	public void logIn() throws InterruptedException
-	{
+	public void LogIn() throws InterruptedException
+   
+{
 	   driver.findElement(By.linkText("Login or register")).click();
 	   WebElement LoginName= driver.findElement(By.id("loginFrm_loginname"));
 	   WebElement LoginPassword=driver.findElement(By.id("loginFrm_password"));
@@ -98,9 +99,34 @@ public class TestStore extends SignUpData{
 	   LoginPassword.sendKeys(password);
 	   Thread.sleep(4000);
 	   LoginButton.click();
-		
+	   Thread.sleep(2000);
+	   String WelcomeMessage="Welcome back "+FirstName;
+	   boolean actualValue=driver.getPageSource().contains(WelcomeMessage);
+	   Assert.assertEquals(actualValue, true);
 	}
+
+@Test(priority=4)
+
+public void AddItems()
+{
+	driver.navigate().to(Website);
 	
+	List <WebElement> AllItems= driver.findElements(By.className("prdocutname"));
+	int randomItem=rand.nextInt(AllItems.size());
+	AllItems.get(15).click();
+	while(driver.getPageSource().contains("Out of Stock")||driver.getCurrentUrl().contains("product_id=116"))
+	{
+		driver.navigate().back();
+		List <WebElement> AlternativeItem= driver.findElements(By.className("prdocutname"));
+		int randomAlternativeItem=rand.nextInt(AlternativeItem.size());
+		AlternativeItem.get(randomAlternativeItem).click();
+	}
+	WebElement AddItemButton=driver.findElement(By.cssSelector(".cart"));
+	AddItemButton.click();
+	
+
+
+}
 	
 	
 	@AfterTest

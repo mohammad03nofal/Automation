@@ -5,8 +5,8 @@
     <classes>
       <class name="AutomationTestStore.TestStore">
         <methods>
-          <include name="logIn"/>
           <include name="AfterMyTest"/>
+          <include name="AddItems"/>
           <include name="SetUp"/>
         </methods>
       </class> <!-- AutomationTestStore.TestStore -->
