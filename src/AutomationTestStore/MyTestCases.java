@@ -16,7 +16,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class TestStore extends SignUpData{
+public class MyTestCases extends MyData {
 	WebDriver driver = new EdgeDriver();
 	String Website="https://automationteststore.com/";
 	String SignUpPage="https://automationteststore.com/index.php?rt=account/create";
@@ -105,27 +105,32 @@ public class TestStore extends SignUpData{
 	   Assert.assertEquals(actualValue, true);
 	}
 
-@Test(priority=4)
+@Test(priority=4,invocationCount = 4)
 
 public void AddItems()
 {
 	driver.navigate().to(Website);
-	
-	List <WebElement> AllItems= driver.findElements(By.className("prdocutname"));
-	int randomItem=rand.nextInt(AllItems.size());
-	AllItems.get(15).click();
-	while(driver.getPageSource().contains("Out of Stock")||driver.getCurrentUrl().contains("product_id=116"))
+	for(int i=0;i<10;i++)//10 attempts
 	{
-		driver.navigate().back();
-		List <WebElement> AlternativeItem= driver.findElements(By.className("prdocutname"));
-		int randomAlternativeItem=rand.nextInt(AlternativeItem.size());
-		AlternativeItem.get(randomAlternativeItem).click();
+		List <WebElement> AllItems= driver.findElements(By.className("prdocutname"));
+		int randomItem=rand.nextInt(AllItems.size());
+		AllItems.get(randomItem).click();
+		boolean OutOfStock=driver.getPageSource().contains("Out of Stock");
+		boolean blockedproduct=driver.getCurrentUrl().contains("product_id=116");
+		
+		
+	if(!OutOfStock||!blockedproduct)
+	{
+		WebElement AddItemButton=driver.findElement(By.cssSelector(".cart"));
+		AddItemButton.click();
+		return;
+		//List <WebElement> AlternativeItem= driver.findElements(By.className("prdocutname"));
+		//int randomAlternativeItem=rand.nextInt(AlternativeItem.size());
+		//AlternativeItem.get(randomAlternativeItem).click();
+
 	}
-	WebElement AddItemButton=driver.findElement(By.cssSelector(".cart"));
-	AddItemButton.click();
-	
-
-
+	 driver.navigate().back();
+	}
 }
 	
 	
