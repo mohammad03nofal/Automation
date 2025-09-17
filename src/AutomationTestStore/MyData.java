@@ -67,6 +67,7 @@ public class MyData {
 			System.out.println(CustomerLastName);
 			System.out.println(Email);
 			System.out.println(Password);
+			System.out.println(Password);
 		}
 		driver.findElement(By.id("AccountFrm_firstname")).sendKeys(CustomerFirstName);
 		driver.findElement(By.id("AccountFrm_lastname")).sendKeys(CustomerLastName);
